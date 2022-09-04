@@ -1,0 +1,128 @@
+.container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(180deg,var(--color-soft-violet),var(--color-soft-blue));
+}
+
+.card-wrapper{
+    position: relative;
+}
+
+.card__cube{
+    position: absolute;
+    top:-3.4rem;
+    left: 85%;
+    width: 7.8rem;
+    height: auto;
+    margin-left: -15.5rem;
+    z-index: 1;
+    animation: cuber  2s infinite;
+
+    @media screen and (min-width: 1000px) {
+        
+        z-index: 5;
+        top:13rem;
+        width: 14rem;
+        height: auto;
+        left: 8.5rem;
+
+    }
+}
+
+
+.card{
+    transition: width .4s;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: url("../images/bg-pattern-mobile.svg"),white;
+    background-repeat: no-repeat;
+    background-position: 50% 0%;
+    border-radius: 1.5rem;
+    overflow: visible;
+    width: 22rem;
+    box-shadow: 0 5rem 5rem -.3rem  rgba(0,0,0,0.25);
+
+    @media screen and (min-width: 1000px) {
+        background: url("../images/bg-pattern-desktop.svg") white;
+        flex-direction: row;
+        width: 56rem;
+        max-width: none;
+        height: 33rem;
+        overflow: hidden;
+        background-repeat: no-repeat;
+        background-position: -35rem 70%;
+
+    }
+
+   
+
+    &__img{
+        align-self: center;
+        position: absolute;
+        height: auto;
+        width: 15rem;
+        top: -6.8rem;
+        // border: 2px solid red;
+
+        @media screen and (min-width: 1000px) {
+            position: relative;
+            height: auto;
+            width: auto;
+            align-self: center;
+            top: 0rem;
+            left: -4.6rem;
+        }
+    }
+
+
+    &__text-wrapper{
+        padding: 8rem 1.5rem;
+        
+        @media screen and (min-width: 1000px) {       
+            width: 50%;
+            margin-left: auto;
+            padding: 6rem 0;
+            padding-right: 7rem;
+            
+        }
+    }
+
+    &__heading{
+        text-align: center;
+        font-weight: 700;
+        font-size: 2.3rem;
+        margin-bottom: 2rem;
+
+        @media screen and (min-width: 1000px) {
+            text-align: start;
+            margin-bottom: 4rem;
+        }
+    }
+
+
+}
+
+hr{
+    border: 0;
+ border-top: 1px solid var(--color-light-greyish-blue);
+}
+
+
+
+@keyframes cuber{
+    0%{
+        transform: translateY(0rem);
+    }
+
+    50%{
+        transform: translateY(-.5rem);
+    }
+
+    100%{
+        transform: translateY(0rem);
+    }
+}
